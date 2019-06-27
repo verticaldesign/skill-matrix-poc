@@ -1,0 +1,354 @@
+$borderColor: #ccc;
+$primaryColor: #367c2b;
+$textColor: #333;
+$linkColor: #888;
+$btnColor: #fdda01;
+
+$skill-color-0: #b9313d;
+$skill-color-1: #b9313d;
+$skill-color-2: #c16f29;
+$skill-color-3: #afce02;
+$skill-color-4: #68d316;
+$skill-color-5: #07a71a;
+
+.u-margin-bottom {
+  margin-bottom: 1rem;
+}
+.u-margin-top {
+  margin-top: 1rem;
+}
+.u-margin-left {
+  margin-left: 1rem;
+}
+.u-margin-right {
+  margin-right: 1rem;
+}
+.u-float-right {
+  float: right;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+  line-height: 1.5;
+  font-family: Helvetica Neue, Roboto, helvetica, arial, Nimbus Sans L, FreeSans,
+    Liberation Sans, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+.width-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.content-container {
+  background-color: #fff;
+  padding: 1rem;
+}
+.header-container {
+  background-color: #fff;
+  margin-bottom: 1rem;
+  nav {
+    border-bottom: 1px solid $borderColor;
+    border-top: 1px solid $borderColor;
+  }
+}
+.header {
+  //border-bottom: 1px solid $borderColor;
+  display: flex;
+  flex-direction: row;
+}
+.title-container {
+  flex-grow: 99;
+  border-right: 1px solid $borderColor;
+  color: $primaryColor;
+  padding: 1rem;
+  text-align: right;
+  h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: normal;
+  }
+}
+.header-search {
+  color: $primaryColor;
+  //border-right: 1px solid $borderColor;
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item {
+  color: $linkColor;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  &.home {
+    font-size: 24px;
+    padding: 6px 0px 0 1rem;
+    vertical-align: top;
+    line-height: 0;
+  }
+}
+.grid-rating {
+  border-collapse: collapse;
+  border-spacing: 0;
+  td {
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    padding: 0.25rem;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+  }
+  .grid-name {
+    //font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+    width: 160px;
+  }
+}
+
+.rated-cell-1 {
+  background-color: $skill-color-1;
+  color: #fff;
+}
+.rated-cell-2 {
+  background-color: $skill-color-2;
+  color: #fff;
+}
+.rated-cell-3 {
+  background-color: $skill-color-3;
+  color: #fff;
+}
+.rated-cell-4 {
+  background-color: $skill-color-4;
+  color: #fff;
+}
+.rated-cell-5 {
+  background-color: $skill-color-5;
+  color: #fff;
+}
+.grid-header-row {
+  border-bottom: 2px solid $primaryColor;
+  display: flex;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.skill-grid-header-cell {
+  font-weight: bold;
+  height: 110px;
+  padding-bottom: 5px;
+  text-align: left;
+  width: 25px;
+  border-right: 1px solid #ccc;
+  background-color: #eee;
+  position: relative;
+  cursor: pointer;
+  .vertical-header {
+    margin-left: -55px;
+    position: absolute;
+    width: 130px;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: #eee;
+    top: 30px;
+  }
+}
+.placeholder-cell {
+  width: 25px;
+  border-right: 1px solid $borderColor;
+  background-color: #eee;
+}
+
+select {
+  padding: 0.25rem 0.35rem;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+}
+.page-header {
+  margin-bottom: 2rem;
+  .title {
+    font-size: 32px;
+  }
+}
+.title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 24px;
+  color: $primaryColor;
+}
+
+.page-content {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.user-details {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2335);
+  z-index: 2;
+  &.showing {
+    width: auto;
+    .user-details-container {
+      transform: translateX(0);
+    }
+  }
+}
+.user-details-container {
+  transition: 0.5s;
+  transform: translateX(600px);
+  transition-delay: 0.25s;
+  background-color: #fff;
+  padding: 1rem;
+}
+.shape-container {
+  width: 515px;
+}
+.overlay {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &.showing {
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+  }
+}
+.btn {
+  display: inline-block;
+  background-color: $btnColor;
+  padding: 6px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 2px;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.profile-img {
+  max-width: 300px;
+  max-height: 235px;
+  margin-left: 1rem;
+}
+.static-info {
+  display: flex;
+  flex-direction: row;
+}
+.info-row {
+  margin-bottom: 0.25rem;
+  font-size: 15px;
+  label {
+    font-weight: bold;
+  }
+  span {
+    font-weight: normal;
+    padding-left: 5px;
+  }
+}
+.details-actions-container {
+  display: flex;
+  justify-content: space-between;
+}
+.user-detail-row {
+  //border-bottom: 1px solid $borderColor;
+  line-height: 1;
+  padding: 3px 0;
+  .skill-name {
+    width: 65px;
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 7px;
+    transform: rotate(180deg);
+    &.none {
+      opacity: 0.5;
+    }
+  }
+}
+.skill-block {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  vertical-align: bottom;
+  &.empty {
+    background-color: #fff !important;
+  }
+}
+.spin-container {
+  transform: rotate(90deg);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+.detail-grid-container {
+  background-color: #fff;
+  //padding: 0 1rem;
+}
+.shape-container .title span {
+  color: #888;
+  font-size: 14px;
+  margin-left: 5px;
+}
+.project-row {
+  padding: 1rem;
+  border-bottom: 1px solid $borderColor;
+  display: flex;
+  justify-content: space-between;
+  .project-facet {
+    width: 20%;
+    label {
+      color: #999;
+      span {
+        color: $textColor;
+        padding-left: 3px;
+        font-weight: bold;
+      }
+    }
+    &.error {
+      font-weight: bold;
+      color: rgb(141, 11, 11);
+    }
+  }
+}
+.project-title {
+  font-size: 18px;
+  text-align: left;
+}
+.status {
+  &.active {
+    color: green;
+  }
+  &.inactive {
+    color: rgb(155, 155, 155);
+  }
+}
+a {
+  color: $primaryColor;
+  &:hover {
+    color: #333;
+  }
+}
